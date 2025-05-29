@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE htl>
 <meta charset="utf-8">
 
 <link href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍓</text></svg>"
@@ -19,15 +19,29 @@
 
 <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
 <script>
+    function locateUser() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLatLng = [position.coords.latitude, position.coords.longitude];
+                map.setView(userLatLng, 14); // zoom level 14, adjust as needed
+                L.marker(userLatLng).addTo(map).bindPopup("You are here!").openPopup();
+            }, function () {
+                alert("Unable to retrieve your location.");
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    }
+
     var map = L.map('map');
     var layer;
 
     // Define the custom strawberry icon
     var strawberryIcon = L.icon({
         iconUrl: 'https://em-content.zobj.net/source/openmoji/413/strawberry_1f353.png',
-        iconSize: [32, 32], // adjust size as needed
-        iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
-        popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+        iconSize: [48, 48],      // increased size
+        iconAnchor: [24, 48],    // center bottom
+        popupAnchor: [0, -48]    // above the icon
     });
 
     // Use pointToLayer to set the icon for each feature
@@ -61,5 +75,5 @@
     }
 
     updateGeoJson();
-    window.onhashchange = updateGeoJson;
+    locateUser();
 </script>
