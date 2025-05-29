@@ -128,10 +128,9 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
 def save_geojson(data: dict, filename: str) -> None:
     timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M")
     base, ext = os.path.splitext(filename)
-    filename_with_timestamp = f"{base}_{timestamp}{ext}"
 
     with open(filename, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2, sort_keys=True)
+        json.dump(data, f, ensure_ascii=False, sort_keys=True)
         
 
 def worker_task(location: Tuple[float, float], all_kiosks: Dict[int, Kiosk],
