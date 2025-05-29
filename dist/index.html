@@ -1,83 +1,104 @@
-<!DOCTYPE htl>
-<meta charset="utf-8">
-<link href="manifest.json" rel="manifest"/>
-<link href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍓</text></svg>"
-      rel="icon">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Erdbeerfinder</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
-<link href="https://unpkg.com/leaflet@latest/dist/leaflet.css" rel="stylesheet"/>
-<style>
-    html, body, #map {
-        margin: 0;
-        height: 100%;
-        width: 100%;
-    }
-</style>
-<meta content="initial-scale=1.0, user-scalable=no" name="viewport"/>
-<title>Erdbeerfinder</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍓</text></svg>">
 
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol@latest/dist/L.Control.Locate.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        html, body, #map {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
 <div id="map"></div>
 
+<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
-
-<link href="https://unpkg.com/leaflet.locatecontrol@latest/dist/L.Control.Locate.min.css" rel="stylesheet"/>
 <script src="https://unpkg.com/leaflet.locatecontrol@latest/dist/L.Control.Locate.min.js"></script>
 
 <script>
-    var map = L.map('map');
-    lc = L.control
-        .locate({
-            strings: {
-                title: "Show me where I am, yo!"
-            }
-        })
-        .addTo(map);
-    var layer;
-
-    // Define the custom strawberry icon
-    var strawberryIcon = L.icon({
-        iconUrl: 'strawberry.png', // Replace with your actual path or URL
-        iconSize: [48, 48],      // increased size
-        iconAnchor: [24, 48],    // center bottom
-        popupAnchor: [0, -48]    // above the icon
+    const map = L.map('map', {
+        zoomSnap: 0.25,
     });
 
-    var strawberryIconBW = L.icon({
-        iconUrl: 'strawberry_bw.png', // Replace with your actual path or URL
-        iconSize: [32, 32], // adjust size as needed
-        iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
-        popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
-    });
-
-
-    // Use pointToLayer to set the icon for each feature
-    function pointToLayer(feature, latlng) {
-        var icon = feature.properties && feature.properties.isOpened ? strawberryIcon : strawberryIconBW;
-        return L.marker(latlng, {icon: icon});
-    }
-
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    const locateControl = L.control.locate({
+        locateOptions: {
+            maxZoom: 15.5,
+        }
     }).addTo(map);
+    locateControl.start();
+
+    let geoJsonLayer;
+
+    // Define icons
+    const strawberryIcon = L.icon({
+        iconUrl: 'strawberry.png',
+        iconSize: [48, 48],
+        iconAnchor: [24, 48],
+        popupAnchor: [0, -48]
+    });
+
+    const strawberryIconBW = L.icon({
+        iconUrl: 'strawberry_bw.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+
+    function pointToLayer(feature, latlng) {
+        const icon = feature.properties?.isOpened ? strawberryIcon : strawberryIconBW;
+        return L.marker(latlng, { icon });
+    }
 
     function onEachFeature(feature, layer) {
-        if (feature.properties)
-            layer.bindPopup(Object.entries(feature.properties).map((prop) => prop.join(': ')).join('<br>'));
+        if (feature.properties) {
+            const popupContent = Object.entries(feature.properties)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join('<br>');
+            layer.bindPopup(popupContent);
+        }
     }
 
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
     function updateGeoJson() {
-        if (layer) {
-            map.removeLayer(layer);
-            layer = undefined;
+        if (geoJsonLayer) {
+            map.removeLayer(geoJsonLayer);
         }
-        fetch("/karls.geo.json", {cors: true})
-            .then((resp) => resp.json())
-            .then((json) => {
-                layer = L.geoJson(json, {onEachFeature, pointToLayer}).addTo(map);
-                map.fitBounds(layer.getBounds());
+        fetch("/karls.geo.json")
+            .then(response => {
+                if (!response.ok) throw new Error("Network response was not ok");
+                return response.json();
             })
-            .catch(() => alert('Error loading or parsing GeoJSON'))
+            .then(data => {
+                geoJsonLayer = L.geoJson(data, { onEachFeature, pointToLayer }).addTo(map);
+                map.fitBounds(geoJsonLayer.getBounds());
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Error loading or parsing GeoJSON');
+            });
     }
 
     updateGeoJson();
 </script>
+</body>
+</html>
