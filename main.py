@@ -7,6 +7,9 @@ from dataclasses import dataclass
 from typing import List, Optional, Dict, Set, Tuple, Generator
 from threading import Lock
 import os
+from datetime import datetime
+import gzip
+
 
 # Configuration
 ACCESS_TOKEN = os.environ.get("KARLS_API_TOKEN")
@@ -119,8 +122,23 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
 
 
 def save_geojson(data: dict, filename: str) -> None:
+    timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M")
+    base, ext = os.path.splitext(filename)
+    filename_with_timestamp = f"{base}_{timestamp}{ext}"
+
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2, sort_keys=True)
+
+    with open(filename_with_timestamp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2, sort_keys=True)
+    # Append the new file to archive.gz
+    archive_name = "archive.gz"
+    with open(filename_with_timestamp, "rb") as src, open(archive_name, "ab") as archive:
+        with gzip.GzipFile(filename=filename_with_timestamp, mode="wb", fileobj=archive) as gz:
+            gz.write(src.read())
+    os.remove(filename_with_timestamp)
+    archive_size = os.path.getsize(archive_name)
+    print(f"Archive size: {archive_size / 1024:.2f} KB")
 
 
 def worker_task(location: Tuple[float, float], all_kiosks: Dict[int, Kiosk],
