@@ -108,12 +108,9 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
                 "name": kiosk.kioskName,
                 "number": kiosk.kioskNumber,
                 "locationGroup": kiosk.locationGroup,
-                "address": {
-                    "city": kiosk.city,
-                    "street": kiosk.street,
-                    "zipCode": kiosk.zipCode,
-                },
+                "address": f"{kiosk.street}, {kiosk.zipCode} {kiosk.city}",
                 "isOpened": kiosk.isOpened,
+                "lastUpdate": datetime.now().isoformat(),
             },
         }
         geojson["features"].append(feature)
@@ -215,6 +212,7 @@ def save_kiosks_to_db(kiosks: Dict[int, Kiosk]) -> None:
                 "street": kiosk.street,
                 "zipCode": kiosk.zipCode,
                 "isOpened": kiosk.isOpened,
+                "lastUpdate": datetime.now().isoformat(),
             },
             ["kioskId"]
         )
