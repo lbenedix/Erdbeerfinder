@@ -23,6 +23,17 @@
             height: 100%;
             width: 100%;
         }
+
+        :root {
+            --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .map-tiles {
+                filter: var(--map-tiles-filter, none);
+            }
+        }
+
     </style>
 </head>
 
@@ -35,30 +46,15 @@
 
 <script>
 
-    var light = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        minZoom: 0,
-        maxZoom: 20,
-        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-    });
-
-    var dark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
-        minZoom: 0,
-        maxZoom: 20,
-        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        ext: 'png'
-    });
-
-    var baseMaps = {
-        "Light": light,
-        "Dark": dark
-    };
-
     const map = L.map('map', {
         zoomSnap: 0.25,
-        layers: [dark, light,],
     });
 
-    var layerControl = L.control.layers(baseMaps).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        className: 'map-tiles'
+    }).addTo(map);
+
 
     const locateControl = L.control.locate({
         locateOptions: {
