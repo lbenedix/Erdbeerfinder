@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from threading import Lock
 from typing import Dict, Generator, List, Optional, Set, Tuple
+
 import dataset
 import pytz
 import requests
@@ -196,7 +197,7 @@ def collect_kiosks_data(num_workers: int = NUM_WORKERS) -> Dict[int, Kiosk]:
     print(f"\nFound {len(all_kiosks)} Karls kiosks.")
     return all_kiosks
 
-def save_kiosks_to_db(kiosks: Dict[int, Kiosk]) -> None:
+def update_kiosks_in_db(kiosks: Dict[int, Kiosk]) -> None:
     db = dataset.connect("sqlite:///karls.db")
     table = db["items"]
     history_table = db["items_history"]
@@ -230,14 +231,41 @@ def save_kiosks_to_db(kiosks: Dict[int, Kiosk]) -> None:
             }
         )
 
+def load_kiosks_from_db() -> Dict[int, Kiosk]:
+    db = dataset.connect("sqlite:///karls.db")
+    table = db["items"]
+    kiosks = {}
+    for row in table.all():
+        kiosk = Kiosk(
+            kioskNumber=row["kioskNumber"],
+            kioskId=row["kioskId"],
+            kioskName=row["kioskName"],
+            locationGroup=row["locationGroup"],
+            geoLat=row["geoLat"],
+            geoLng=row["geoLng"],
+            distanceFromPoi=0,  # Not stored in DB, set to 0 or ignore in geojson
+            city=row["city"],
+            street=row["street"],
+            zipCode=row["zipCode"],
+            openingHours=[],  # Not stored in DB, set to empty
+            isOpened=row["isOpened"],
+        )
+        kiosks[kiosk.kioskId] = kiosk
+    return kiosks
+
+def export_geojson_from_db():
+    kiosks = load_kiosks_from_db()
+    geojson_data = create_geojson(kiosks)
+    save_geojson(geojson_data, OUTPUT_FILE)
+    print(f"GeoJSON file created with {len(kiosks)} kiosk locations at {OUTPUT_FILE}")
+
+
 def main():
     """Main program execution."""
     print("Starting Karls kiosk data collection...")
     kiosks = collect_kiosks_data(NUM_WORKERS)
-    save_kiosks_to_db(kiosks)
-    geojson_data = create_geojson(kiosks)
-    save_geojson(geojson_data, OUTPUT_FILE)
-    print(f"GeoJSON file created with {len(kiosks)} kiosk locations at {OUTPUT_FILE}")
+    update_kiosks_in_db(kiosks)
+    export_geojson_from_db()
 
 
 if __name__ == "__main__":
