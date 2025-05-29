@@ -11,7 +11,6 @@ import dataset
 import pytz
 import requests
 
-
 tz = pytz.timezone("Europe/Berlin")
 now = tz.localize(datetime.now())
 
@@ -201,6 +200,9 @@ def save_kiosks_to_db(kiosks: Dict[int, Kiosk]) -> None:
     db = dataset.connect("sqlite:///karls.db")
     table = db["items"]
     history_table = db["items_history"]
+
+    # set all kiosks to closed before updating
+    table.update({ "isOpened": False, "lastUpdate": now.isoformat()}, [])
 
     for kiosk in kiosks.values():
         # Upsert main item
