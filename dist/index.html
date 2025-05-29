@@ -6,7 +6,8 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍓</text></svg>">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍓</text></svg>">
 
     <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
@@ -33,9 +34,31 @@
 <script src="https://unpkg.com/leaflet.locatecontrol@latest/dist/L.Control.Locate.min.js"></script>
 
 <script>
+
+    var light = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        minZoom: 0,
+        maxZoom: 20,
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    var dark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
+        minZoom: 0,
+        maxZoom: 20,
+        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        ext: 'png'
+    });
+
+    var baseMaps = {
+        "Light": light,
+        "Dark": dark
+    };
+
     const map = L.map('map', {
         zoomSnap: 0.25,
+        layers: [dark, light,],
     });
+
+    var layerControl = L.control.layers(baseMaps).addTo(map);
 
     const locateControl = L.control.locate({
         locateOptions: {
@@ -63,7 +86,7 @@
 
     function pointToLayer(feature, latlng) {
         const icon = feature.properties?.isOpened ? strawberryIcon : strawberryIconBW;
-        return L.marker(latlng, { icon });
+        return L.marker(latlng, {icon});
     }
 
     function onEachFeature(feature, layer) {
@@ -75,9 +98,6 @@
         }
     }
 
-    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
 
     function updateGeoJson() {
         if (geoJsonLayer) {
@@ -89,7 +109,7 @@
                 return response.json();
             })
             .then(data => {
-                geoJsonLayer = L.geoJson(data, { onEachFeature, pointToLayer }).addTo(map);
+                geoJsonLayer = L.geoJson(data, {onEachFeature, pointToLayer}).addTo(map);
                 map.fitBounds(geoJsonLayer.getBounds());
             })
             .catch(err => {
