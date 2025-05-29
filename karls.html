@@ -18,22 +18,19 @@
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
-<script>
-    function locateUser() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var userLatLng = [position.coords.latitude, position.coords.longitude];
-                map.setView(userLatLng, 14); // zoom level 14, adjust as needed
-                L.marker(userLatLng).addTo(map).bindPopup("You are here!").openPopup();
-            }, function () {
-                alert("Unable to retrieve your location.");
-            });
-        } else {
-            alert("Geolocation is not supported by your browser.");
-        }
-    }
 
+<link href="https://unpkg.com/leaflet.locatecontrol@latest/dist/L.Control.Locate.min.css" rel="stylesheet"/>
+<script src="https://unpkg.com/leaflet.locatecontrol@latest/dist/L.Control.Locate.min.js"></script>
+
+<script>
     var map = L.map('map');
+    lc = L.control
+        .locate({
+            strings: {
+                title: "Show me where I am, yo!"
+            }
+        })
+        .addTo(map);
     var layer;
 
     // Define the custom strawberry icon
@@ -75,5 +72,4 @@
     }
 
     updateGeoJson();
-    locateUser();
 </script>
