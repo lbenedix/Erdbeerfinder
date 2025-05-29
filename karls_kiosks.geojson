@@ -3,138 +3,6 @@
     {
       "geometry": {
         "coordinates": [
-          13.893971,
-          51.939391
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Lübben Steinkirchen",
-          "street": "Lindenstraße",
-          "zipCode": "15907"
-        },
-        "id": 1154,
-        "isOpened": true,
-        "locationGroup": "Dresden",
-        "name": "Lübben Parkplatz an der Lindenstraße",
-        "number": "B374"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.752966,
-          52.421613
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Erkner",
-          "street": "Friedrichstr. 21/ 22",
-          "zipCode": "15537"
-        },
-        "id": 606,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Zentrum Erkner",
-        "number": "B153"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.62496,
-          52.45448
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Friedrichshagen",
-          "street": "Bölschestr. 86",
-          "zipCode": "12587"
-        },
-        "id": 40,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bölschestraße 86 Tel: 030/60033671",
-        "number": "B040"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.58754,
-          52.44118
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Köpenick",
-          "street": "Pablo-Neruda-Str. 2-4",
-          "zipCode": "12559"
-        },
-        "id": 89,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Allende Center",
-        "number": "B089"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.578116,
-          52.446037
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin",
-          "street": "Lüdersstraße/Ecke Jägerstraße",
-          "zipCode": "12555"
-        },
-        "id": 1152,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Alter Markt",
-        "number": "B373"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.33029,
-          51.320181
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Leipzig",
-          "street": "Windorfer Str. 2",
-          "zipCode": "04229"
-        },
-        "id": 1145,
-        "isOpened": true,
-        "locationGroup": "Sachsen",
-        "name": "Windorfer Str.",
-        "number": "S036"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           12.34555,
           51.32756
         ],
@@ -223,22 +91,22 @@
     {
       "geometry": {
         "coordinates": [
-          12.371543,
-          51.344646
+          12.38077,
+          51.34373
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Leipzig Zentrum-Nordwest",
-          "street": "Tröndlinring/Pfaffendorfer Straße",
-          "zipCode": "04105"
+          "city": "Leipzig Zentrum-Ost",
+          "street": "Willy-Brandt-Platz 7",
+          "zipCode": "04109"
         },
-        "id": 877,
+        "id": 1075,
         "isOpened": true,
         "locationGroup": "Sachsen",
-        "name": "Tröndlinring / Pfaffendorfer Straße",
-        "number": "S014"
+        "name": "PROMENADEN Hauptbahnhof Leipzig",
+        "number": "S028"
       },
       "type": "Feature"
     },
@@ -355,50 +223,6 @@
     {
       "geometry": {
         "coordinates": [
-          10.64829,
-          53.8878
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Stockelsdorf",
-          "street": "Segeberger Straße 34-36",
-          "zipCode": "23617"
-        },
-        "id": 649,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Rewe Rathauspassage Stockelsdorf",
-        "number": "W105"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.70851,
-          53.84089
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Lübeck",
-          "street": "Ratzeburger Allee 127",
-          "zipCode": "23562"
-        },
-        "id": 723,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Ratzeburger Allee, Wirth-Center",
-        "number": "W017"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           10.69756,
           53.91834
         ],
@@ -415,6 +239,270 @@
         "locationGroup": "Warnsdorf",
         "name": "Bad Schwartau, Matzen",
         "number": "W003"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          10.819593,
+          53.965771
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Warnsdorf",
+          "street": "Fuchsbergstraße 4",
+          "zipCode": "23626"
+        },
+        "id": 738,
+        "isOpened": true,
+        "locationGroup": "Warnsdorf",
+        "name": "Selbstpflückfeld Warnsdorf",
+        "number": "W033"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          10.82013,
+          53.96586
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Ratekau",
+          "street": "Fuchsbergstraße 4",
+          "zipCode": "23626"
+        },
+        "id": 585,
+        "isOpened": true,
+        "locationGroup": "Hof Warnsdorf",
+        "name": "Erlebnis-Dorf Warnsdorf",
+        "number": "W025"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.893971,
+          51.939391
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Lübben Steinkirchen",
+          "street": "Lindenstraße",
+          "zipCode": "15907"
+        },
+        "id": 1154,
+        "isOpened": true,
+        "locationGroup": "Dresden",
+        "name": "Lübben Parkplatz an der Lindenstraße",
+        "number": "B374"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.752966,
+          52.421613
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Erkner",
+          "street": "Friedrichstr. 21/ 22",
+          "zipCode": "15537"
+        },
+        "id": 606,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Zentrum Erkner",
+        "number": "B153"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.62496,
+          52.45448
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Friedrichshagen",
+          "street": "Bölschestr. 86",
+          "zipCode": "12587"
+        },
+        "id": 40,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Bölschestraße 86 Tel: 030/60033671",
+        "number": "B040"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.58754,
+          52.44118
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Köpenick",
+          "street": "Pablo-Neruda-Str. 2-4",
+          "zipCode": "12559"
+        },
+        "id": 89,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Allende Center",
+        "number": "B089"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.578116,
+          52.446037
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin",
+          "street": "Lüdersstraße/Ecke Jägerstraße",
+          "zipCode": "12555"
+        },
+        "id": 1152,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Alter Markt",
+        "number": "B373"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.54133,
+          54.3924
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Born a. Darß",
+          "street": "Bäderstraße 1",
+          "zipCode": "18375"
+        },
+        "id": 843,
+        "isOpened": true,
+        "locationGroup": "Darß",
+        "name": "Edeka Jens Born",
+        "number": "M071"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.35285,
+          54.29204
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Dierhagen",
+          "street": "Strandstr. 26",
+          "zipCode": "18347"
+        },
+        "id": 163,
+        "isOpened": true,
+        "locationGroup": "Darß",
+        "name": "Fischlandtor EKZ",
+        "number": "M019"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.23659,
+          54.24934
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Graal-Müritz",
+          "street": "August-Bebel-Str. 3",
+          "zipCode": "18181"
+        },
+        "id": 155,
+        "isOpened": true,
+        "locationGroup": "Darß",
+        "name": "Haus des Gastes",
+        "number": "M013"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.23215,
+          54.16024
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Rövershagen",
+          "street": "Purkshof 2",
+          "zipCode": "18182"
+        },
+        "id": 141,
+        "isOpened": true,
+        "locationGroup": "Hof Rövershagen",
+        "name": "Erlebnis-Dorf Rövershagen",
+        "number": "R028"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.230668,
+          54.160048
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Rövershagen",
+          "street": "Purkshof 2",
+          "zipCode": "18182"
+        },
+        "id": 223,
+        "isOpened": true,
+        "locationGroup": "Rostock",
+        "name": "Selbstpflückfeld Purkshof",
+        "number": "SP004"
       },
       "type": "Feature"
     },
@@ -465,28 +553,6 @@
     {
       "geometry": {
         "coordinates": [
-          13.07805,
-          54.30917
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Stralsund",
-          "street": "Tribseer Damm",
-          "zipCode": "18437"
-        },
-        "id": 151,
-        "isOpened": true,
-        "locationGroup": "Stralsund",
-        "name": "Bahnhof-Mitropa Fenster",
-        "number": "M006"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           13.054421,
           54.328143
         ],
@@ -509,66 +575,22 @@
     {
       "geometry": {
         "coordinates": [
-          13.05718,
-          54.32465
+          13.91372,
+          54.07985
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Stralsund",
-          "street": "Heinrich-Heine-Ring",
-          "zipCode": "18435"
+          "city": "Zinnowitz",
+          "street": "Neue Strandstraße 25",
+          "zipCode": "17454"
         },
-        "id": 152,
+        "id": 837,
         "isOpened": true,
-        "locationGroup": "Stralsund",
-        "name": "Knieper Center Bushaltestelle",
-        "number": "M007"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.38019,
-          51.33081
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Leipzig Zentrum-Süd",
-          "street": "Windmühlenstraße 26",
-          "zipCode": "04107"
-        },
-        "id": 786,
-        "isOpened": true,
-        "locationGroup": "Sachsen",
-        "name": "Bayrischer Platz",
-        "number": "S007"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.88458,
-          53.95403
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Lübeck",
-          "street": "Mecklenburger Landstraße 51",
-          "zipCode": "23570"
-        },
-        "id": 920,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Edeka Jens Priwall",
-        "number": "W117"
+        "locationGroup": "Usedom",
+        "name": "Strandperle Zinnowitz",
+        "number": "M070"
       },
       "type": "Feature"
     },
@@ -597,22 +619,22 @@
     {
       "geometry": {
         "coordinates": [
-          10.8597,
-          53.96348
+          12.095647,
+          54.009724
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Lübeck",
-          "street": "Nordmeerstraße 98",
-          "zipCode": "23570"
+          "city": "Pölchow",
+          "street": "Ausfahrt Nobelstr. Richtung Autobahn",
+          "zipCode": ""
         },
-        "id": 742,
+        "id": 139,
         "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Edeka Payk Travemünde",
-        "number": "W058"
+        "locationGroup": "Rostock",
+        "name": "Selbstpflückfeld Südstadt",
+        "number": "SP002"
       },
       "type": "Feature"
     },
@@ -729,110 +751,22 @@
     {
       "geometry": {
         "coordinates": [
-          12.41711,
-          54.37825
+          10.58645,
+          54.29381
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Ahrenshoop",
-          "street": "Dorfstraße",
-          "zipCode": "18347"
+          "city": "Lütjenburg",
+          "street": "Posthofstraße 4",
+          "zipCode": "24321"
         },
-        "id": 162,
+        "id": 848,
         "isOpened": true,
-        "locationGroup": "Darß",
-        "name": "Ahrenshoop Parkplatz",
-        "number": "M018"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.54133,
-          54.3924
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Born a. Darß",
-          "street": "Bäderstraße 1",
-          "zipCode": "18375"
-        },
-        "id": 843,
-        "isOpened": true,
-        "locationGroup": "Darß",
-        "name": "Edeka Jens Born",
-        "number": "M071"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.35285,
-          54.29204
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Dierhagen",
-          "street": "Strandstr. 26",
-          "zipCode": "18347"
-        },
-        "id": 163,
-        "isOpened": true,
-        "locationGroup": "Darß",
-        "name": "Fischlandtor EKZ",
-        "number": "M019"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.23659,
-          54.24934
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Graal-Müritz",
-          "street": "August-Bebel-Str. 3",
-          "zipCode": "18181"
-        },
-        "id": 155,
-        "isOpened": true,
-        "locationGroup": "Darß",
-        "name": "Haus des Gastes",
-        "number": "M013"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.0926,
-          54.17643
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Rostock Seebad Warnemünde",
-          "street": "Am Passagierkai",
-          "zipCode": "18119"
-        },
-        "id": 145,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Pier 7",
-        "number": "R035"
+        "locationGroup": "Warnsdorf",
+        "name": "famila Lütjenburg",
+        "number": "W085"
       },
       "type": "Feature"
     },
@@ -861,22 +795,44 @@
     {
       "geometry": {
         "coordinates": [
-          10.58005,
-          54.13014
+          12.05685,
+          54.13866
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Eutin",
-          "street": "Plöner Landstraße 8",
-          "zipCode": "23701"
+          "city": "Rostock Lütten Klein",
+          "street": "St. Petersburger Straße",
+          "zipCode": "18107"
         },
-        "id": 705,
+        "id": 128,
         "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "famila Eutin",
-        "number": "W066"
+        "locationGroup": "Rostock",
+        "name": "Cinestar",
+        "number": "R016"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.07288,
+          54.09938
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Rostock Reutershagen",
+          "street": "Goerdelerstr. 50",
+          "zipCode": "18069"
+        },
+        "id": 124,
+        "isOpened": true,
+        "locationGroup": "Rostock",
+        "name": "Reuterpassage",
+        "number": "R012"
       },
       "type": "Feature"
     },
@@ -927,28 +883,6 @@
     {
       "geometry": {
         "coordinates": [
-          13.04943,
-          52.41885
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Potsdam",
-          "street": "Georg-Hermann-Allee 99",
-          "zipCode": "14469"
-        },
-        "id": 1124,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Biosphäre Potsdam",
-        "number": "B357"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           13.05831,
           52.39927
         ],
@@ -993,154 +927,22 @@
     {
       "geometry": {
         "coordinates": [
-          12.23215,
-          54.16024
+          13.09165,
+          52.39264
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Rövershagen",
-          "street": "Purkshof 2",
-          "zipCode": "18182"
+          "city": "Potsdam Babelsberg Nord",
+          "street": "Karl-Liebknecht-Str. 134 A",
+          "zipCode": "14482"
         },
-        "id": 141,
+        "id": 230,
         "isOpened": true,
-        "locationGroup": "Hof Rövershagen",
-        "name": "Erlebnis-Dorf Rövershagen",
-        "number": "R028"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.230668,
-          54.160048
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Rövershagen",
-          "street": "Purkshof 2",
-          "zipCode": "18182"
-        },
-        "id": 223,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Selbstpflückfeld Purkshof",
-        "number": "SP004"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.90974,
-          54.29257
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Oldenburg in Holstein",
-          "street": "Am Vossberg 1",
-          "zipCode": "23758"
-        },
-        "id": 642,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "famila Oldenburg",
-        "number": "W080"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.05685,
-          54.13866
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Rostock Lütten Klein",
-          "street": "St. Petersburger Straße",
-          "zipCode": "18107"
-        },
-        "id": 128,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Cinestar",
-        "number": "R016"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.58645,
-          54.29381
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Lütjenburg",
-          "street": "Posthofstraße 4",
-          "zipCode": "24321"
-        },
-        "id": 848,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "famila Lütjenburg",
-        "number": "W085"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.6223,
-          54.12684
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Eutin",
-          "street": "Industriestraße 5",
-          "zipCode": "23701"
-        },
-        "id": 709,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Rewe Eutin",
-        "number": "W101"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          14.16764,
-          53.9546
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Heringsdorf",
-          "street": "Friedenstr. 23",
-          "zipCode": "17424"
-        },
-        "id": 308,
-        "isOpened": true,
-        "locationGroup": "Usedom",
-        "name": "Fleischerei Wollin Heringsdorf",
-        "number": "M056"
+        "locationGroup": "Berlin",
+        "name": "Rathaus Babelsberg",
+        "number": "B114"
       },
       "type": "Feature"
     },
@@ -1169,50 +971,6 @@
     {
       "geometry": {
         "coordinates": [
-          13.91372,
-          54.07985
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Zinnowitz",
-          "street": "Neue Strandstraße 25",
-          "zipCode": "17454"
-        },
-        "id": 837,
-        "isOpened": true,
-        "locationGroup": "Usedom",
-        "name": "Strandperle Zinnowitz",
-        "number": "M070"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.61557,
-          54.1332
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Lubmin",
-          "street": "Spandowerhagener Weg 1",
-          "zipCode": "17509"
-        },
-        "id": 597,
-        "isOpened": true,
-        "locationGroup": "Greifswald",
-        "name": "Edeka Lubmin",
-        "number": "M010"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           13.47332,
           52.75798
         ],
@@ -1229,28 +987,6 @@
         "locationGroup": "Berlin",
         "name": "EKZ Wandlitz",
         "number": "B224"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.29185,
-          52.63362
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Frohnau",
-          "street": "Zeltinger Platz 10-14",
-          "zipCode": "13465"
-        },
-        "id": 196,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Zeltinger Platz",
-        "number": "B113"
       },
       "type": "Feature"
     },
@@ -1323,132 +1059,22 @@
     {
       "geometry": {
         "coordinates": [
-          12.38077,
-          51.34373
+          13.33407,
+          52.59544
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Leipzig Zentrum-Ost",
-          "street": "Willy-Brandt-Platz 7",
-          "zipCode": "04109"
+          "city": "Berlin Reinickendorf",
+          "street": "Wilhelmsruher Damm 231",
+          "zipCode": "13435"
         },
-        "id": 1075,
+        "id": 76,
         "isOpened": true,
-        "locationGroup": "Sachsen",
-        "name": "PROMENADEN Hauptbahnhof Leipzig",
-        "number": "S028"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.376055,
-          51.335938
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Leipzig Zentrum",
-          "street": "Wilhelm-Leuschner-Platz / Roßplatz",
-          "zipCode": "04109"
-        },
-        "id": 787,
-        "isOpened": true,
-        "locationGroup": "Sachsen",
-        "name": "Wilhelm-Leuschner-Platz",
-        "number": "S008"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.82013,
-          53.96586
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Ratekau",
-          "street": "Fuchsbergstraße 4",
-          "zipCode": "23626"
-        },
-        "id": 585,
-        "isOpened": true,
-        "locationGroup": "Hof Warnsdorf",
-        "name": "Erlebnis-Dorf Warnsdorf",
-        "number": "W025"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.819593,
-          53.965771
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Warnsdorf",
-          "street": "Fuchsbergstraße 4",
-          "zipCode": "23626"
-        },
-        "id": 738,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Selbstpflückfeld Warnsdorf",
-        "number": "W033"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.79052,
-          54.09737
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Neustadt in Holstein",
-          "street": "Sierksdorfer Straße 8",
-          "zipCode": "23730"
-        },
-        "id": 651,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Rewe Neustadt, Sierksdorfer Straße +10%",
-        "number": "W113"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.095647,
-          54.009724
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Pölchow",
-          "street": "Ausfahrt Nobelstr. Richtung Autobahn",
-          "zipCode": ""
-        },
-        "id": 139,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Selbstpflückfeld Südstadt",
-        "number": "SP002"
+        "locationGroup": "Berlin",
+        "name": "Wilhelmsruher Damm",
+        "number": "B072"
       },
       "type": "Feature"
     },
@@ -1499,28 +1125,6 @@
     {
       "geometry": {
         "coordinates": [
-          12.12203,
-          54.08785
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Rostock Kröpeliner-Tor-Vorstadt",
-          "street": "Am Brink 49",
-          "zipCode": "18055"
-        },
-        "id": 967,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Am Brink",
-        "number": "R048"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           12.13452,
           54.08928
         ],
@@ -1543,6 +1147,28 @@
     {
       "geometry": {
         "coordinates": [
+          12.154733,
+          54.103847
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Rostock Dierkow-Neu",
+          "street": "Gutenbergstraße 76",
+          "zipCode": "18146"
+        },
+        "id": 1010,
+        "isOpened": true,
+        "locationGroup": "Rostock",
+        "name": "Dierkower Kreuz",
+        "number": "R049"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
           13.64884,
           52.51596
         ],
@@ -1559,28 +1185,6 @@
         "locationGroup": "Berlin",
         "name": "S-Bahnhof Birkenstein",
         "number": "B223"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.60428,
-          52.53723
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Hellersdorf",
-          "street": "Alice-Salomon-Platz",
-          "zipCode": "12627"
-        },
-        "id": 12,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Helle Mitte / Bürgeramt",
-        "number": "B013"
       },
       "type": "Feature"
     },
@@ -1631,198 +1235,66 @@
     {
       "geometry": {
         "coordinates": [
-          12.17502,
-          54.09833
+          13.178678,
+          52.421536
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Rostock Brinckmansdorf",
-          "street": "Alt Bartelsdorfer Str. 1",
-          "zipCode": "18146"
+          "city": "Berlin Wannsee",
+          "street": "Kronprinzessinnenweg 250",
+          "zipCode": "14109"
         },
-        "id": 762,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Netto Grönfingers",
-        "number": "R040"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          12.154733,
-          54.103847
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Rostock Dierkow-Neu",
-          "street": "Gutenbergstraße 76",
-          "zipCode": "18146"
-        },
-        "id": 1010,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Dierkower Kreuz",
-        "number": "R049"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.09165,
-          52.39264
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Potsdam Babelsberg Nord",
-          "street": "Karl-Liebknecht-Str. 134 A",
-          "zipCode": "14482"
-        },
-        "id": 230,
+        "id": 1195,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Rathaus Babelsberg",
-        "number": "B114"
+        "name": "S-Bahnhof Wannsee",
+        "number": "B381"
       },
       "type": "Feature"
     },
     {
       "geometry": {
         "coordinates": [
-          13.314695,
-          52.366497
+          13.24063,
+          52.44259
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Großbeeren",
-          "street": "Berliner Straße 98",
-          "zipCode": "14979"
+          "city": "Berlin Zehlendorf",
+          "street": "Fischerhüttenstr. 89",
+          "zipCode": "14163"
         },
-        "id": 1137,
+        "id": 212,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Penny Großbeeren",
-        "number": "B363"
+        "name": "U-Bahn Krumme Lanke",
+        "number": "B080"
       },
       "type": "Feature"
     },
     {
       "geometry": {
         "coordinates": [
-          12.07288,
-          54.09938
+          13.50515,
+          52.57338
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Rostock Reutershagen",
-          "street": "Goerdelerstr. 50",
-          "zipCode": "18069"
+          "city": "Berlin Neu-Hohenschönhausen",
+          "street": "Egon-Erwin-Kisch Str. 31",
+          "zipCode": "13059"
         },
-        "id": 124,
-        "isOpened": true,
-        "locationGroup": "Rostock",
-        "name": "Reuterpassage",
-        "number": "R012"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.35465,
-          52.41307
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Marienfelde",
-          "street": "Hildburghauser Str. 27c",
-          "zipCode": "12279"
-        },
-        "id": 55,
+        "id": 103,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Sprint Tankstelle",
-        "number": "B054"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.31341,
-          52.42039
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichterfelde",
-          "street": "Hildburghauser Str. 256",
-          "zipCode": "12207"
-        },
-        "id": 1076,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bäckerei Junge Hildburghauser Str.",
-        "number": "B339"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.30321,
-          52.42671
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichterfelde",
-          "street": "Lausanner Str. 84",
-          "zipCode": "12205"
-        },
-        "id": 322,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Schweizer Viertel",
-        "number": "B167"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.328601,
-          52.428923
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin",
-          "street": "Lankwitzer Str. 19-24",
-          "zipCode": "12209"
-        },
-        "id": 1196,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahnhof Lichterfelde Ost",
-        "number": "B379"
+        "name": "S-Bahnhof Wartenberg",
+        "number": "B100"
       },
       "type": "Feature"
     },
@@ -1851,66 +1323,22 @@
     {
       "geometry": {
         "coordinates": [
-          13.50943,
-          52.45636
+          13.508196,
+          52.45477
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Berlin Niederschöneweide",
-          "street": "Schnellerstr. 21",
-          "zipCode": "12439"
+          "city": "Berlin Schöneweide",
+          "street": "Sterndamm / Südostallee",
+          "zipCode": "12487"
         },
-        "id": 87,
+        "id": 27,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Zentrum Schöneweide",
-        "number": "B085"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.78115,
-          53.99525
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Timmendorfer Strand",
-          "street": "Höppnerweg 8",
-          "zipCode": "23669"
-        },
-        "id": 628,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "famila Timmendorfer Strand",
-        "number": "W063"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.18327,
-          52.54803
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Spandau",
-          "street": "Falkenseer Chaussee 33",
-          "zipCode": "13583"
-        },
-        "id": 114,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Falkenseer Chaussee Sparkasse",
-        "number": "B109"
+        "name": "Sterndamm Straba",
+        "number": "B028"
       },
       "type": "Feature"
     },
@@ -1933,116 +1361,6 @@
         "locationGroup": "Berlin",
         "name": "Carossa-Quartier",
         "number": "B215"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.1973,
-          52.52524
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Wilhelmstadt",
-          "street": "Pichelsdorfer Str. 116",
-          "zipCode": "13595"
-        },
-        "id": 207,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Rossmann Pichelsdorfer Straße 116",
-        "number": "B125"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.33407,
-          52.59544
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Reinickendorf",
-          "street": "Wilhelmsruher Damm 231",
-          "zipCode": "13435"
-        },
-        "id": 76,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Wilhelmsruher Damm",
-        "number": "B072"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.294678,
-          52.575834
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Tegel",
-          "street": "Seidelstraße / Bernauer Str.",
-          "zipCode": "13507"
-        },
-        "id": 85,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn Holzhauser Str.",
-        "number": "B083"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.178678,
-          52.421536
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Wannsee",
-          "street": "Kronprinzessinnenweg 250",
-          "zipCode": "14109"
-        },
-        "id": 1195,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahnhof Wannsee",
-        "number": "B381"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.39561,
-          52.51068
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Mitte",
-          "street": "Leipziger Str. 43-44",
-          "zipCode": "10117"
-        },
-        "id": 48,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Leipziger Straße 43-44",
-        "number": "B047"
       },
       "type": "Feature"
     },
@@ -2093,28 +1411,6 @@
     {
       "geometry": {
         "coordinates": [
-          10.83081,
-          53.99122
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Timmendorfer Strand",
-          "street": "Paduaweg 3",
-          "zipCode": "23669"
-        },
-        "id": 850,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Edeka Jens Niendorf",
-        "number": "W062"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           13.56492,
           52.51898
         ],
@@ -2137,44 +1433,22 @@
     {
       "geometry": {
         "coordinates": [
-          13.5572,
-          52.52529
+          13.56044,
+          52.55542
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Berlin Biesdorf",
-          "street": "Oberfeldstr. 138",
-          "zipCode": "12683"
+          "city": "Berlin Marzahn",
+          "street": "Mehrower Allee 22",
+          "zipCode": "12687"
         },
-        "id": 511,
+        "id": 280,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "REWE Oberfeldstr.",
-        "number": "B212"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          10.74774,
-          54.02404
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Scharbeutz",
-          "street": "Hamburger Ring 5-7",
-          "zipCode": "23683"
-        },
-        "id": 648,
-        "isOpened": true,
-        "locationGroup": "Warnsdorf",
-        "name": "Rewe Scharbeutz",
-        "number": "W100"
+        "name": "Ärztehaus Marzahn",
+        "number": "B156"
       },
       "type": "Feature"
     },
@@ -2225,28 +1499,6 @@
     {
       "geometry": {
         "coordinates": [
-          13.38278,
-          52.48324
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Tempelhof",
-          "street": "Manfred v. Richthofenstr.16",
-          "zipCode": "12101"
-        },
-        "id": 261,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Manfred v. Richthofen Str.16",
-        "number": "B141"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           13.37352,
           52.48781
         ],
@@ -2291,418 +1543,66 @@
     {
       "geometry": {
         "coordinates": [
-          13.56044,
-          52.55542
+          13.49227,
+          52.54414
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Berlin Marzahn",
-          "street": "Mehrower Allee 22",
-          "zipCode": "12687"
+          "city": "Berlin Alt-Hohenschönhausen",
+          "street": "Konrad-Wolf-Straße & Orankestraße",
+          "zipCode": "13055"
         },
-        "id": 280,
+        "id": 84,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Ärztehaus Marzahn",
-        "number": "B156"
+        "name": "Konrad-Wolf-Straße",
+        "number": "B082"
       },
       "type": "Feature"
     },
     {
       "geometry": {
         "coordinates": [
-          13.50515,
-          52.57338
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Neu-Hohenschönhausen",
-          "street": "Egon-Erwin-Kisch Str. 31",
-          "zipCode": "13059"
-        },
-        "id": 103,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahnhof Wartenberg",
-        "number": "B100"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.35349,
-          52.48873
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Schöneberg",
-          "street": "Akazienstr.",
-          "zipCode": "10823"
-        },
-        "id": 485,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Akazienstr. / Apostel-Paulus-Str.",
-        "number": "B218"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.30049,
-          52.5307
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Charlottenburg",
-          "street": "Max-Dohrn-Str. 9",
-          "zipCode": "10589"
-        },
-        "id": 17,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn Jungfernheide",
-        "number": "B018"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.35898,
-          52.57419
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Reinickendorf",
-          "street": "Kolpingplatz",
-          "zipCode": "13409"
-        },
-        "id": 226,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Kolpingplatz",
-        "number": "B102"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.36275,
-          52.56723
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Reinickendorf",
-          "street": "Residenzstr. 124",
-          "zipCode": "13409"
-        },
-        "id": 66,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Residenzstr. 124 / Amendestr. 1",
-        "number": "B066"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.34262,
-          52.43464
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lankwitz",
-          "street": "Kaiser-Wilhelm-Str. 60-62",
-          "zipCode": "12247"
-        },
-        "id": 46,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Kaiser-Wilhelm-Straße 60-62 Post",
-        "number": "B045"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.31622,
-          52.44326
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichterfelde",
-          "street": "Hindenburgdamm 39",
-          "zipCode": "12203"
-        },
-        "id": 214,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Hindenburgdamm / Klingsorstr.",
-        "number": "B065"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.34114,
-          52.45096
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Steglitz",
-          "street": "Steglitzer Damm 31",
-          "zipCode": "12169"
-        },
-        "id": 99,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Sparkasse Steglitzer Damm",
-        "number": "B096"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.39044,
-          52.43388
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Mariendorf",
-          "street": "Mariendorfer Damm 191",
-          "zipCode": "12107"
-        },
-        "id": 51,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Schaukelpferd",
-        "number": "B050"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.24063,
-          52.44259
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Zehlendorf",
-          "street": "Fischerhüttenstr. 89",
-          "zipCode": "14163"
-        },
-        "id": 212,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn Krumme Lanke",
-        "number": "B080"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.39552,
-          52.56601
+          13.4275,
+          52.56803
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
           "city": "Berlin Pankow",
-          "street": "Wollankstr. 16",
-          "zipCode": "13187"
+          "street": "Prenzlauer Promenade 128",
+          "zipCode": "13089"
         },
-        "id": 1081,
+        "id": 60,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Rewe Wollankstr.",
-        "number": "B340"
+        "name": "Prenzlauer Promenade 128",
+        "number": "B059"
       },
       "type": "Feature"
     },
     {
       "geometry": {
         "coordinates": [
-          13.38893,
-          52.54881
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Gesundbrunnen",
-          "street": "Hanne-Sobek-Platz",
-          "zipCode": "13355"
-        },
-        "id": 779,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahn Gesundbrunnen",
-        "number": "B263"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.40388,
-          52.56923
+          13.4653,
+          52.52441
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
           "city": "Berlin",
-          "street": "Breite Straße 28 b / Ecke Mühlenstraße",
-          "zipCode": "13187"
+          "street": "Storkower Straße 207a",
+          "zipCode": "10369"
         },
-        "id": 1161,
+        "id": 701,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Rathaus Pankow",
-        "number": "B377"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.254644,
-          52.450229
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Zehlendorf",
-          "street": "Riemeister Str. 129",
-          "zipCode": "14169"
-        },
-        "id": 47,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn Onkel Toms Hütte",
-        "number": "B046"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.265238,
-          52.441809
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Zehlendorf",
-          "street": "Clayallee 278",
-          "zipCode": "14169"
-        },
-        "id": 942,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Rothe Gartenbau Clayallee",
-        "number": "B306"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.29705,
-          52.4428
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichterfelde",
-          "street": "Drakestr. 33",
-          "zipCode": "12205"
-        },
-        "id": 39,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Commerzbank Drakestraße",
-        "number": "B039"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.305502,
-          52.447718
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichterfelde",
-          "street": "Enzianstr. 5",
-          "zipCode": "12203"
-        },
-        "id": 331,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahn Botanischer Garten",
-        "number": "B172"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.48235,
-          52.5035
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Rummelsburg",
-          "street": "Kaskelstraße/ Türrschmidtstr.",
-          "zipCode": "10317"
-        },
-        "id": 702,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Kaskelstr. / Türrschmidtstr.",
-        "number": "B177"
+        "name": "Storkower Straße",
+        "number": "B163"
       },
       "type": "Feature"
     },
@@ -2731,176 +1631,44 @@
     {
       "geometry": {
         "coordinates": [
-          13.49597,
-          52.50589
+          13.49743,
+          52.5092
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Berlin Rummelsburg",
-          "street": "Weitlingstr./ Sophienstr.",
+          "city": "Berlin Lichtenberg",
+          "street": "Weitlingstr. 22",
           "zipCode": "10317"
         },
-        "id": 703,
+        "id": 592,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Weitlingstr. / Sophienstr.",
-        "number": "B255"
+        "name": "S-Bahnhof Lichtenberg",
+        "number": "B007"
       },
       "type": "Feature"
     },
     {
       "geometry": {
         "coordinates": [
-          13.508196,
-          52.45477
+          13.30049,
+          52.5307
         ],
         "type": "Point"
       },
       "properties": {
         "address": {
-          "city": "Berlin Schöneweide",
-          "street": "Sterndamm / Südostallee",
-          "zipCode": "12487"
+          "city": "Berlin Charlottenburg",
+          "street": "Max-Dohrn-Str. 9",
+          "zipCode": "10589"
         },
-        "id": 27,
+        "id": 17,
         "isOpened": true,
         "locationGroup": "Berlin",
-        "name": "Sterndamm Straba",
-        "number": "B028"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.44815,
-          52.43712
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Britz",
-          "street": "Gutschmidtstr. 17",
-          "zipCode": "12359"
-        },
-        "id": 16,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn Britz Süd",
-        "number": "B017"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.50417,
-          52.54861
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Alt-Hohenschönhausen",
-          "street": "Hauptstr. 9-9d",
-          "zipCode": "13055"
-        },
-        "id": 530,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Storchenhof",
-        "number": "B229"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.49227,
-          52.54414
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Alt-Hohenschönhausen",
-          "street": "Konrad-Wolf-Straße & Orankestraße",
-          "zipCode": "13055"
-        },
-        "id": 84,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Konrad-Wolf-Straße",
-        "number": "B082"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.40902,
-          52.57109
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Pankow",
-          "street": "Ossietzkystraße 2",
-          "zipCode": "13187"
-        },
-        "id": 5,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Ossietzkystraße",
-        "number": "B006"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.41052,
-          52.56639
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Pankow",
-          "street": "Florastr. 50",
-          "zipCode": "13187"
-        },
-        "id": 18,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn Pankow Florastraße",
-        "number": "B019"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.41357,
-          52.5597
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Pankow",
-          "street": "Elsa Brändström Str. 2",
-          "zipCode": "13189"
-        },
-        "id": 104,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Elsa Brändström Str. 2 Sunpoint",
-        "number": "B101"
+        "name": "U-Bahn Jungfernheide",
+        "number": "B018"
       },
       "type": "Feature"
     },
@@ -2929,6 +1697,314 @@
     {
       "geometry": {
         "coordinates": [
+          13.35465,
+          52.41307
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Marienfelde",
+          "street": "Hildburghauser Str. 27c",
+          "zipCode": "12279"
+        },
+        "id": 55,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Sprint Tankstelle",
+        "number": "B054"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.31341,
+          52.42039
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Lichterfelde",
+          "street": "Hildburghauser Str. 256",
+          "zipCode": "12207"
+        },
+        "id": 1076,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Bäckerei Junge Hildburghauser Str.",
+        "number": "B339"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.39044,
+          52.43388
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Mariendorf",
+          "street": "Mariendorfer Damm 191",
+          "zipCode": "12107"
+        },
+        "id": 51,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Schaukelpferd",
+        "number": "B050"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.44815,
+          52.43712
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Britz",
+          "street": "Gutschmidtstr. 17",
+          "zipCode": "12359"
+        },
+        "id": 16,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "U-Bahn Britz Süd",
+        "number": "B017"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.254644,
+          52.450229
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Zehlendorf",
+          "street": "Riemeister Str. 129",
+          "zipCode": "14169"
+        },
+        "id": 47,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "U-Bahn Onkel Toms Hütte",
+        "number": "B046"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.35334,
+          52.49945
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Schöneberg",
+          "street": "Nollendorfplatz",
+          "zipCode": "10777"
+        },
+        "id": 78,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "U-Bahnhof Nollendorfplatz",
+        "number": "B074"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.48235,
+          52.5035
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Rummelsburg",
+          "street": "Kaskelstraße/ Türrschmidtstr.",
+          "zipCode": "10317"
+        },
+        "id": 702,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Kaskelstr. / Türrschmidtstr.",
+        "number": "B177"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.49597,
+          52.50589
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Rummelsburg",
+          "street": "Weitlingstr./ Sophienstr.",
+          "zipCode": "10317"
+        },
+        "id": 703,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Weitlingstr. / Sophienstr.",
+        "number": "B255"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.34114,
+          52.45096
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Steglitz",
+          "street": "Steglitzer Damm 31",
+          "zipCode": "12169"
+        },
+        "id": 99,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Sparkasse Steglitzer Damm",
+        "number": "B096"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.328601,
+          52.428923
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin",
+          "street": "Lankwitzer Str. 19-24",
+          "zipCode": "12209"
+        },
+        "id": 1196,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "S-Bahnhof Lichterfelde Ost",
+        "number": "B379"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.265238,
+          52.441809
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Zehlendorf",
+          "street": "Clayallee 278",
+          "zipCode": "14169"
+        },
+        "id": 942,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Rothe Gartenbau Clayallee",
+        "number": "B306"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.29265,
+          52.47461
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Schmargendorf",
+          "street": "Breite Str. 28",
+          "zipCode": "14199"
+        },
+        "id": 71,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Breite Straße Wilmersdorf",
+        "number": "B068"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.50791,
+          52.49928
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Friedrichsfelde",
+          "street": "Volkrad Str.30-32",
+          "zipCode": "10319"
+        },
+        "id": 33,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Volkradstr. EKZ",
+        "number": "B034"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.31622,
+          52.44326
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Lichterfelde",
+          "street": "Hindenburgdamm 39",
+          "zipCode": "12203"
+        },
+        "id": 214,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Hindenburgdamm / Klingsorstr.",
+        "number": "B065"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
           13.32279,
           52.5112
         ],
@@ -2951,28 +2027,6 @@
     {
       "geometry": {
         "coordinates": [
-          13.33942,
-          52.5262
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Moabit",
-          "street": "Thusnelda Allee",
-          "zipCode": "10551"
-        },
-        "id": 344,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Turmstr. / Thusnelda Allee",
-        "number": "B187"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           13.34739,
           52.52017
         ],
@@ -2989,6 +2043,270 @@
         "locationGroup": "Berlin",
         "name": "S-Bahnhof Bellevue",
         "number": "B053"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.33262,
+          52.50662
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Charlottenburg",
+          "street": "Hardenbergplatz",
+          "zipCode": "10623"
+        },
+        "id": 260,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Bahnhof Zoo",
+        "number": "B140"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.52552,
+          52.48291
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Karlshorst",
+          "street": "Treskowallee 106",
+          "zipCode": "10318"
+        },
+        "id": 111,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Treskowallee",
+        "number": "B107"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.33947,
+          52.46274
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Steglitz",
+          "street": "Bismarckstr. 71",
+          "zipCode": "12157"
+        },
+        "id": 257,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Bismarckstr. 71",
+        "number": "B138"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.3278,
+          52.4647
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Friedenau",
+          "street": "Walther-Schreiber-Platz 1",
+          "zipCode": "12161"
+        },
+        "id": 326,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Schloßstr. Center",
+        "number": "B170"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.343,
+          52.50183
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Schöneberg",
+          "street": "Wittenbergplatz -Tauentzien Str.",
+          "zipCode": "10789"
+        },
+        "id": 263,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "U-Bahn-Hof Wittenbergplatz",
+        "number": "B143"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.52544,
+          52.48107
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Karlshorst",
+          "street": "Treskowallee/Stolzenfelsstr.",
+          "zipCode": "10318"
+        },
+        "id": 615,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "S-Bahnhof Karlshorst",
+        "number": "B087"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.39552,
+          52.56601
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Pankow",
+          "street": "Wollankstr. 16",
+          "zipCode": "13187"
+        },
+        "id": 1081,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Rewe Wollankstr.",
+        "number": "B340"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.40388,
+          52.56923
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin",
+          "street": "Breite Straße 28 b / Ecke Mühlenstraße",
+          "zipCode": "13187"
+        },
+        "id": 1161,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Rathaus Pankow",
+        "number": "B377"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.33159,
+          52.48595
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Wilmersdorf",
+          "street": "Bundesallee 171 / Ecke Badensche Str.",
+          "zipCode": "10715"
+        },
+        "id": 491,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Bundesallee / Badensche Str.",
+        "number": "B192"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.41052,
+          52.56639
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Pankow",
+          "street": "Florastr. 50",
+          "zipCode": "13187"
+        },
+        "id": 18,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "U-Bahn Pankow Florastraße",
+        "number": "B019"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.40902,
+          52.57109
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Pankow",
+          "street": "Ossietzkystraße 2",
+          "zipCode": "13187"
+        },
+        "id": 5,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Ossietzkystraße",
+        "number": "B006"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          13.41357,
+          52.5597
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "address": {
+          "city": "Berlin Pankow",
+          "street": "Elsa Brändström Str. 2",
+          "zipCode": "13189"
+        },
+        "id": 104,
+        "isOpened": true,
+        "locationGroup": "Berlin",
+        "name": "Elsa Brändström Str. 2 Sunpoint",
+        "number": "B101"
       },
       "type": "Feature"
     },
@@ -3039,490 +2357,6 @@
     {
       "geometry": {
         "coordinates": [
-          13.41367,
-          52.54931
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Prenzlauer Berg",
-          "street": "Schönhauser Allee 79-80",
-          "zipCode": "10439"
-        },
-        "id": 10,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahnhof Schönhauser Allee",
-        "number": "B011"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.34909,
-          52.54223
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Wedding",
-          "street": "Föhrerstraße/Amrumer Straße",
-          "zipCode": "13353"
-        },
-        "id": 825,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Charité Berlin",
-        "number": "B269"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.33262,
-          52.50662
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Charlottenburg",
-          "street": "Hardenbergplatz",
-          "zipCode": "10623"
-        },
-        "id": 260,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bahnhof Zoo",
-        "number": "B140"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.33947,
-          52.46274
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Steglitz",
-          "street": "Bismarckstr. 71",
-          "zipCode": "12157"
-        },
-        "id": 257,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bismarckstr. 71",
-        "number": "B138"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.32002,
-          52.45666
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Steglitz",
-          "street": "Schloßstr. 38 / 40",
-          "zipCode": "12163"
-        },
-        "id": 227,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Ärztehaus Schloßstraße",
-        "number": "B104"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.3278,
-          52.4647
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Friedenau",
-          "street": "Walther-Schreiber-Platz 1",
-          "zipCode": "12161"
-        },
-        "id": 326,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Schloßstr. Center",
-        "number": "B170"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.47442,
-          52.53604
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Alt-Hohenschönhausen",
-          "street": "Weissenseer Weg 35",
-          "zipCode": "13055"
-        },
-        "id": 61,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Hohenschönhauser Tor",
-        "number": "B060"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.46845,
-          52.52806
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichtenberg",
-          "street": "Karl-Lade-Str. 60",
-          "zipCode": "10369"
-        },
-        "id": 343,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Ärztehaus Karl-Lade-Str.",
-        "number": "B186"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.457372,
-          52.529118
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Prenzlauer Berg",
-          "street": "Landsberger Allee 117",
-          "zipCode": "10407"
-        },
-        "id": 77,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Forum Landsberger Allee",
-        "number": "B073"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.4653,
-          52.52441
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin",
-          "street": "Storkower Straße 207a",
-          "zipCode": "10369"
-        },
-        "id": 701,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Storkower Straße",
-        "number": "B163"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.30897,
-          52.46721
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Dahlem",
-          "street": "Breitenbachplatz",
-          "zipCode": "14195"
-        },
-        "id": 79,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahnhof Breitenbachplatz",
-        "number": "B075"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.40055,
-          52.58056
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Niederschönhausen",
-          "street": "Hermann Hesse Str. 14 / Waldstraße",
-          "zipCode": "13156"
-        },
-        "id": 206,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Hermann-Hesse-Straße - REWE",
-        "number": "B123"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.48734,
-          52.46527
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Baumschulenweg",
-          "street": "Kiefholzstraße 185",
-          "zipCode": "12437"
-        },
-        "id": 198,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Kiefholzstr. / Baumschulenstr.",
-        "number": "B116"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.52544,
-          52.48107
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Karlshorst",
-          "street": "Treskowallee/Stolzenfelsstr.",
-          "zipCode": "10318"
-        },
-        "id": 615,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahnhof Karlshorst",
-        "number": "B087"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.52552,
-          52.48291
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Karlshorst",
-          "street": "Treskowallee 106",
-          "zipCode": "10318"
-        },
-        "id": 111,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Treskowallee",
-        "number": "B107"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.39272,
-          52.54288
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Gesundbrunnen",
-          "street": "Brunnenstr. 77",
-          "zipCode": "13355"
-        },
-        "id": 102,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Brunnenstr. 77",
-        "number": "B099"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.4044,
-          52.54048
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin",
-          "street": "Bernauer Str. 50 / Ecke Oderberger Str.",
-          "zipCode": "13355"
-        },
-        "id": 1119,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Mauerpark Berlin",
-        "number": "B356"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.52278,
-          52.49737
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Friedrichsfelde",
-          "street": "Otto-Schmirgalstr.1-7",
-          "zipCode": "10319"
-        },
-        "id": 30,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bärenschaufenster",
-        "number": "B031"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.50791,
-          52.49928
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Friedrichsfelde",
-          "street": "Volkrad Str.30-32",
-          "zipCode": "10319"
-        },
-        "id": 33,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Volkradstr. EKZ",
-        "number": "B034"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.51382,
-          52.5054
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Friedrichsfelde",
-          "street": "Alfred-Kowalke-Str. 40",
-          "zipCode": "10315"
-        },
-        "id": 83,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn Friedrichsfelde Kowalke Str.",
-        "number": "B081"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.3244,
-          52.49712
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Wilmersdorf",
-          "street": "Uhlandstr. 150/150a",
-          "zipCode": "10719"
-        },
-        "id": 3,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Uhlandstr.",
-        "number": "B004"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.343,
-          52.50183
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Schöneberg",
-          "street": "Wittenbergplatz -Tauentzien Str.",
-          "zipCode": "10789"
-        },
-        "id": 263,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahn-Hof Wittenbergplatz",
-        "number": "B143"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
           13.426965,
           52.544084
         ],
@@ -3539,204 +2373,6 @@
         "locationGroup": "Berlin",
         "name": "Küchenhaus Prenzlauer Allee",
         "number": "B051"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.49743,
-          52.5092
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichtenberg",
-          "street": "Weitlingstr. 22",
-          "zipCode": "10317"
-        },
-        "id": 592,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "S-Bahnhof Lichtenberg",
-        "number": "B007"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.49674,
-          52.51198
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Lichtenberg",
-          "street": "Frankfurter Allee 237-239",
-          "zipCode": "10365"
-        },
-        "id": 63,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Frankfurter Allee S-Bahn Zugang",
-        "number": "B062"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.35334,
-          52.49945
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Schöneberg",
-          "street": "Nollendorfplatz",
-          "zipCode": "10777"
-        },
-        "id": 78,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "U-Bahnhof Nollendorfplatz",
-        "number": "B074"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.38831,
-          52.5318
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Mitte",
-          "street": "Invalidenstr. 131",
-          "zipCode": "10115"
-        },
-        "id": 8,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bahnhof Nordbahnhof",
-        "number": "B009"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.41191,
-          52.5378
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Prenzlauer Berg",
-          "street": "Schönhauser Allee / Choriner Str.-Oderberger Str.",
-          "zipCode": "10435"
-        },
-        "id": 1097,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Schönhauser Allee / Choriner Str.",
-        "number": "B347"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.33159,
-          52.48595
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Wilmersdorf",
-          "street": "Bundesallee 171 / Ecke Badensche Str.",
-          "zipCode": "10715"
-        },
-        "id": 491,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bundesallee / Badensche Str.",
-        "number": "B192"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.41819,
-          52.53473
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Prenzlauer Berg",
-          "street": "Knaackstr. / Diedenhofer Str.",
-          "zipCode": "10405"
-        },
-        "id": 204,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Kollwitzstr. / Knaackstr.",
-        "number": "B124"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.430851,
-          52.552154
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin",
-          "street": "Heinersdorfer Str. 1",
-          "zipCode": "13086"
-        },
-        "id": 1223,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Bäckerei Backelfe / Caligariplatz",
-        "number": "B389"
-      },
-      "type": "Feature"
-    },
-    {
-      "geometry": {
-        "coordinates": [
-          13.29265,
-          52.47461
-        ],
-        "type": "Point"
-      },
-      "properties": {
-        "address": {
-          "city": "Berlin Schmargendorf",
-          "street": "Breite Str. 28",
-          "zipCode": "14199"
-        },
-        "id": 71,
-        "isOpened": true,
-        "locationGroup": "Berlin",
-        "name": "Breite Straße Wilmersdorf",
-        "number": "B068"
       },
       "type": "Feature"
     }

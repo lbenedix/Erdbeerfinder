@@ -1,15 +1,15 @@
-import json
-import sys
-import itertools
-import requests
 import concurrent.futures
-from dataclasses import dataclass
-from typing import List, Optional, Dict, Set, Tuple, Generator
-from threading import Lock
+import itertools
+import json
 import os
+import sys
+from dataclasses import dataclass
 from datetime import datetime
-import gzip
+from threading import Lock
+from typing import Dict, Generator, List, Optional, Set, Tuple
 
+import dataset
+import requests
 
 # Configuration
 ACCESS_TOKEN = os.environ.get("KARLS_API_TOKEN")
@@ -128,18 +128,7 @@ def save_geojson(data: dict, filename: str) -> None:
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2, sort_keys=True)
-
-    with open(filename_with_timestamp, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2, sort_keys=True)
-    # Append the new file to archive.gz
-    archive_name = "archive.gz"
-    with open(filename_with_timestamp, "rb") as src, open(archive_name, "ab") as archive:
-        with gzip.GzipFile(filename=filename_with_timestamp, mode="wb", fileobj=archive) as gz:
-            gz.write(src.read())
-    os.remove(filename_with_timestamp)
-    archive_size = os.path.getsize(archive_name)
-    print(f"Archive size: {archive_size / 1024:.2f} KB")
-
+        
 
 def worker_task(location: Tuple[float, float], all_kiosks: Dict[int, Kiosk],
                 locations: Set[Tuple[float, float]], done_locations: Set[Tuple[float, float]],
@@ -207,15 +196,43 @@ def collect_kiosks_data(num_workers: int = NUM_WORKERS) -> Dict[int, Kiosk]:
     print(f"\nFound {len(all_kiosks)} Karls kiosks.")
     return all_kiosks
 
+def save_kiosks_to_db(kiosks: Dict[int, Kiosk]) -> None:
+    db = dataset.connect("sqlite:///karls.db")
+    table = db["items"]
+    history_table = db["items_history"]
+
+    for kiosk in kiosks.values():
+        # Upsert main item
+        table.upsert(
+            {
+                "kioskId": kiosk.kioskId,
+                "kioskNumber": kiosk.kioskNumber,
+                "kioskName": kiosk.kioskName,
+                "locationGroup": kiosk.locationGroup,
+                "geoLat": kiosk.geoLat,
+                "geoLng": kiosk.geoLng,
+                "city": kiosk.city,
+                "street": kiosk.street,
+                "zipCode": kiosk.zipCode,
+                "isOpened": kiosk.isOpened,
+            },
+            ["kioskId"]
+        )
+        # Insert history record
+        history_table.insert(
+            {
+                "kioskId": kiosk.kioskId,
+                "seen_at": datetime.now().isoformat(),
+            }
+        )
 
 def main():
     """Main program execution."""
     print("Starting Karls kiosk data collection...")
     kiosks = collect_kiosks_data(NUM_WORKERS)
-
+    save_kiosks_to_db(kiosks)
     geojson_data = create_geojson(kiosks)
     save_geojson(geojson_data, OUTPUT_FILE)
-
     print(f"GeoJSON file created with {len(kiosks)} kiosk locations at {OUTPUT_FILE}")
 
 
