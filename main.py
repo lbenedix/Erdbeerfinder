@@ -7,9 +7,13 @@ from dataclasses import dataclass
 from datetime import datetime
 from threading import Lock
 from typing import Dict, Generator, List, Optional, Set, Tuple
-
 import dataset
+import pytz
 import requests
+
+
+tz = pytz.timezone("Europe/Berlin")
+now = tz.localize(datetime.now())
 
 # Configuration
 ACCESS_TOKEN = os.environ.get("KARLS_API_TOKEN")
@@ -110,7 +114,7 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
                 "locationGroup": kiosk.locationGroup,
                 "address": f"{kiosk.street}, {kiosk.zipCode} {kiosk.city}",
                 "isOpened": kiosk.isOpened,
-                "lastUpdate": datetime.now().isoformat(),
+                "lastUpdate": now.isoformat(),
             },
         }
         geojson["features"].append(feature)
@@ -212,7 +216,7 @@ def save_kiosks_to_db(kiosks: Dict[int, Kiosk]) -> None:
                 "street": kiosk.street,
                 "zipCode": kiosk.zipCode,
                 "isOpened": kiosk.isOpened,
-                "lastUpdate": datetime.now().isoformat(),
+                "lastUpdate": now.isoformat(),
             },
             ["kioskId"]
         )
@@ -220,7 +224,7 @@ def save_kiosks_to_db(kiosks: Dict[int, Kiosk]) -> None:
         history_table.insert(
             {
                 "kioskId": kiosk.kioskId,
-                "seen_at": datetime.now().isoformat(),
+                "seen_at": now.isoformat(),
             }
         )
 
