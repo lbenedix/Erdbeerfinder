@@ -35,17 +35,25 @@
 
     // Define the custom strawberry icon
     var strawberryIcon = L.icon({
-        iconUrl: 'https://em-content.zobj.net/source/openmoji/413/strawberry_1f353.png',
+        iconUrl: 'strawberry.png', // Replace with your actual path or URL
         iconSize: [48, 48],      // increased size
         iconAnchor: [24, 48],    // center bottom
         popupAnchor: [0, -48]    // above the icon
     });
 
+    var strawberryIconBW = L.icon({
+        iconUrl: 'strawberry_bw.png', // Replace with your actual path or URL
+        iconSize: [48, 48],
+        iconAnchor: [24, 48],
+        popupAnchor: [0, -48]
+    });
+
+
     // Use pointToLayer to set the icon for each feature
     function pointToLayer(feature, latlng) {
-        return L.marker(latlng, {icon: strawberryIcon});
+        var icon = feature.properties && feature.properties.isOpened ? strawberryIcon : strawberryIconBW;
+        return L.marker(latlng, {icon: icon});
     }
-
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
