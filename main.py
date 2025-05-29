@@ -16,7 +16,7 @@ ACCESS_TOKEN = os.environ.get("KARLS_API_TOKEN")
 if not ACCESS_TOKEN:
     raise RuntimeError("KARLS_API_TOKEN environment variable not set")
 API_URL = "https://pep.karls.de/vk/api/erdbeerfinder/v1/get-nearest-kiosks"
-OUTPUT_FILE = "karls_kiosks.geojson"
+OUTPUT_FILE = "karls.geo.json"
 NUM_WORKERS = 25  # Number of parallel workers
 
 # Germany bounding box
