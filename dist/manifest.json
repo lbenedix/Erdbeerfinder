@@ -1,6 +1,9 @@
 {
   "theme_color": "#e95a47",
   "background_color": "#e95a47",
+  "name": "Erdbeerfinder",
+  "short_name": "Erdbeerfinder",
+  "description": "Find the closest Karls stand near you.",
   "icons": [
     {
       "purpose": "maskable",
@@ -19,6 +22,6 @@
   "display": "standalone",
   "dir": "auto",
   "lang": "de-DE",
-  "name": "Erdbeerfinder",
-  "start_url": "https://karls.l3q.de"
+  "start_url": "https://karls.l3q.de",
+  "scope": "https://karls.l3q.de/"
 }
