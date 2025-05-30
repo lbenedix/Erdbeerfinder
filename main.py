@@ -57,7 +57,6 @@ class Kiosk:
     openingHours: List[OpeningHour]
     isOpened: bool
     lastSeen: Optional[str] = None
-    lastUpdated: Optional[str] = None
 
 
 def create_spinner() -> Generator[str, None, None]:
@@ -117,7 +116,6 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
                 "address": f"{kiosk.street}, {kiosk.zipCode} {kiosk.city}",
                 "isOpened": kiosk.isOpened,
                 "lastSeen": kiosk.lastSeen,
-                "lastUpdated": kiosk.lastUpdated,
             },
         }
         geojson["features"].append(feature)
@@ -250,7 +248,6 @@ def load_kiosks_from_db() -> Dict[int, Kiosk]:
             openingHours=[],  # Not stored in DB, set to empty
             isOpened=row["isOpened"],
             lastSeen=row.get("lastSeen", "unknown"),
-            lastUpdated=row.get("lastUpdated", "unknown"),
         )
         kiosks[kiosk.kioskId] = kiosk
     return kiosks
