@@ -65,22 +65,41 @@
 
 <script>
 
-    const map = L.map('map', {
-        zoomSnap: 0.25,
-    });
+    const map = L.map('map', {});
 
     L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         className: 'map-tiles'
     }).addTo(map);
 
-
     const locateControl = L.control.locate({
         locateOptions: {
-            maxZoom: 15.5,
+            maxZoom: 15,
         }
     }).addTo(map);
     locateControl.start();
+
+    // Custom control for refreshing GeoJSON
+    const RefreshControl = L.Control.extend({
+        options: {position: 'topleft'},
+        onAdd: function (map) {
+            const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+            const button = L.DomUtil.create('a', '', container);
+            button.innerHTML = '♻️';
+            button.title = 'Refresh Kiosks';
+            button.href = '#';
+
+            L.DomEvent.on(button, 'click', L.DomEvent.stopPropagation)
+                .on(button, 'click', L.DomEvent.preventDefault)
+                .on(button, 'click', () => {
+                    updateGeoJson();
+                });
+
+            return container;
+        }
+    });
+
+    map.addControl(new RefreshControl());
 
     let geoJsonLayer;
 
