@@ -91,7 +91,8 @@
             let popupContent = `<b>${name}</b><br>`;
             popupContent += `<br>Last Seen: ${new Date(feature.properties.lastSeen).toLocaleString('de-DE', {
                 dateStyle: 'medium',
-                timeStyle: 'short'
+                timeStyle: 'short',
+                timeZone: 'Europe/Berlin'
             }) || '??'}`;
             popupContent += `<br>locationGroup: ${feature.properties.locationGroup || '🤷'}`;
             layer.bindPopup(popupContent);
