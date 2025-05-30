@@ -226,11 +226,6 @@ def update_kiosks_in_db(kiosks: Dict[int, Kiosk]) -> None:
             {
                 "kioskId": kiosk.kioskId,
                 "seen_at": int(now.timestamp()),
-                "year": now.year,
-                "month": now.month,
-                "day": now.day,
-                "hour": now.hour,
-                "minute": now.minute,
             }
         )
 
