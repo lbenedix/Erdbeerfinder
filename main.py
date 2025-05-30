@@ -56,8 +56,8 @@ class Kiosk:
     zipCode: str
     openingHours: List[OpeningHour]
     isOpened: bool
-    lastSeen: str
-    lastUpdated: str
+    lastSeen: Optional[str] = None
+    lastUpdated: Optional[str] = None
 
 
 def create_spinner() -> Generator[str, None, None]:
@@ -126,9 +126,6 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
 
 
 def save_geojson(data: dict, filename: str) -> None:
-    timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M")
-    base, ext = os.path.splitext(filename)
-
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, sort_keys=True)
         
