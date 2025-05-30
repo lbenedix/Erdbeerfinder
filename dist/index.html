@@ -89,11 +89,13 @@
         if (feature.properties) {
             const name = feature.properties.name || 'Unknown Name';
             let popupContent = `<b>${name}</b><br>`;
-            popupContent += `<br>Last Seen: ${new Date(feature.properties.lastSeen).toLocaleString('de-DE', {
-                dateStyle: 'medium',
-                timeStyle: 'short',
-                timeZone: 'Europe/Berlin'
-            }) || '??'}`;
+            popupContent += `<br>Last Seen: ${
+                new Date(feature.properties.lastSeen)
+                //     .toLocaleString('de-DE', {
+                //     dateStyle: 'medium',
+                //     timeStyle: 'short',
+                // }) || '??'
+            }`;
             popupContent += `<br>locationGroup: ${feature.properties.locationGroup || '🤷'}`;
             layer.bindPopup(popupContent);
         }
