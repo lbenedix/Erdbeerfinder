@@ -116,6 +116,8 @@
                 // }) || '??'
             }`;
             popupContent += `<br>locationGroup: ${feature.properties.locationGroup || '🤷'}`;
+            popupContent += `<br><a href="https://www.google.com/maps/dir/?api=1&destination=${feature.geometry.coordinates[1]},${feature.geometry.coordinates[0]}&travelmode=walking" target="_blank" rel="noopener">Navigate</a>`;
+
             layer.bindPopup(popupContent);
         }
 
