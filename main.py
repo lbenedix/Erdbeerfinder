@@ -261,7 +261,9 @@ def export_geojson_from_db():
     kiosks = load_kiosks_from_db()
     geojson_data = create_geojson(kiosks)
     save_geojson(geojson_data, OUTPUT_FILE)
-    message = f"{now.strftime('%Y-%m-%d %H:%M:%S')} - {len(kiosks)} kiosk locations open"
+    total_kiosks = len(kiosks)
+    open_kiosks = sum(1 for k in kiosks.values() if k.isOpened)
+    message = f"{now.strftime('%Y-%m-%d %H:%M:%S')} - {total_kiosks} kiosk locations, {open_kiosks} currently open"
     print(message)
     with open("dist/karls.log", "a", encoding="utf-8") as logfile:
         logfile.write(message + "\n")
