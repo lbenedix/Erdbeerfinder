@@ -1,3 +1,4 @@
+import argparse
 import concurrent.futures
 import itertools
 import json
@@ -75,6 +76,18 @@ def generate_grid_locations() -> Set[Tuple[float, float]]:
         lat += GERMANY_BOUNDS["lat_step"]
     return locations
 
+def get_locations_from_db() -> Set[Tuple[float, float]]:
+    """Generate a set of locations from the database items."""
+    db = dataset.connect("sqlite:///karls.db")
+    table = db["items"]
+    locations = set()
+    for row in table.all():
+        lat = row["geoLat"]
+        lng = row["geoLng"]
+        locations.add((lat,lng))
+        
+    print(f"Loaded {len(locations)} locations from the database.")
+    return locations
 
 def fetch_kiosks_data(location: Tuple[float, float], retries: int = 3, delay: float = 1.0) -> List[dict]:
     headers = {
@@ -146,9 +159,13 @@ def worker_task(location: Tuple[float, float], all_kiosks: Dict[int, Kiosk],
             all_kiosks[kiosk.kioskId] = kiosk
 
 
-def collect_kiosks_data(num_workers: int = NUM_WORKERS) -> Dict[int, Kiosk]:
-    """Collect all kiosk data by scanning through locations using parallel workers."""
-    locations = generate_grid_locations()
+def collect_kiosks_data(num_workers: int = NUM_WORKERS, use_db: bool = False) -> Dict[int, Kiosk]:
+    if use_db:
+        locations = get_locations_from_db()
+    else:
+        locations = generate_grid_locations()
+
+
     done_locations = set()
     all_kiosks = {}
     spinner = create_spinner()
@@ -272,12 +289,17 @@ def export_geojson_from_db():
 
 
 def main():
-    """Main program execution."""
+    parser = argparse.ArgumentParser(description="Karls kiosk data collection")
+    parser.add_argument("--use-db",
+                        help="Use locations from the database instead of the grid",
+                        action="store_true",
+                        )
+    args = parser.parse_args()
+
     print("Starting Karls kiosk data collection...")
-    kiosks = collect_kiosks_data(NUM_WORKERS)
+    kiosks = collect_kiosks_data(NUM_WORKERS, use_db=args.use_db)
     update_kiosks_in_db(kiosks)
     export_geojson_from_db()
-
 
 if __name__ == "__main__":
     import time
