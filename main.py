@@ -267,7 +267,7 @@ def export_geojson_from_db():
 
     with open("dist/karls.json", "w", encoding="utf-8") as f:
         json.dump({
-            "open": [kiosk for kiosk in open_kiosks],
+            "open": [kiosk.kioskId for kiosk in open_kiosks],
         }, f, ensure_ascii=False, sort_keys=True)
 
 
