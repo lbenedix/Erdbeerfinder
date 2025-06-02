@@ -21,7 +21,8 @@ ACCESS_TOKEN = os.environ.get("KARLS_API_TOKEN")
 if not ACCESS_TOKEN:
     raise RuntimeError("KARLS_API_TOKEN environment variable not set")
 API_URL = "https://pep.karls.de/vk/api/erdbeerfinder/v1/get-nearest-kiosks"
-OUTPUT_FILE = "dist/karls.geo.json"
+GEO_JSON_FILE = "dist/karls.geo.json"
+GEO_JSON_FILE_ONLY_OPEN = "dist/karls_open.geo.json"
 NUM_WORKERS = 25  # Number of parallel workers
 
 # Germany bounding box
@@ -51,12 +52,12 @@ class Kiosk:
     locationGroup: str
     geoLat: float
     geoLng: float
-    distanceFromPoi: int
     city: str
     street: str
     zipCode: str
-    openingHours: List[OpeningHour]
     isOpened: bool
+    distanceFromPoi: Optional[int] = None
+    openingHours: Optional[List[OpeningHour]] = None
     lastSeen: Optional[str] = None
 
 
@@ -111,10 +112,12 @@ def fetch_kiosks_data(location: Tuple[float, float], retries: int = 3, delay: fl
                 print(f"\nError fetching data for location {location}: {e}")
     return []
 
-def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
+def create_geojson(kiosks_dict: Dict[int, Kiosk], only_open: bool = False) -> dict:
     geojson = {"type": "FeatureCollection", "features": []}
 
     for kiosk_id, kiosk in kiosks_dict.items():
+        if only_open and not kiosk.isOpened:
+            continue
         feature = {
             "type": "Feature",
             "geometry": {
@@ -134,12 +137,6 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk]) -> dict:
         geojson["features"].append(feature)
 
     return geojson
-
-
-def save_geojson(data: dict, filename: str) -> None:
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, sort_keys=True)
-        
 
 def worker_task(location: Tuple[float, float], all_kiosks: Dict[int, Kiosk],
                 locations: Set[Tuple[float, float]], done_locations: Set[Tuple[float, float]],
@@ -271,8 +268,13 @@ def load_kiosks_from_db() -> Dict[int, Kiosk]:
 
 def export_geojson_from_db():
     kiosks = load_kiosks_from_db()
-    geojson_data = create_geojson(kiosks)
-    save_geojson(geojson_data, OUTPUT_FILE)
+
+    with open(GEO_JSON_FILE, "w", encoding="utf-8") as f1:
+        json.dump(create_geojson(kiosks), f1, ensure_ascii=False, sort_keys=True)
+
+    with open(GEO_JSON_FILE_ONLY_OPEN, "w", encoding="utf-8") as f1:
+        json.dump(create_geojson(kiosks, only_open=True), f1, ensure_ascii=False, sort_keys=True)
+
     total_kiosks = len(kiosks)
     open_kiosks = [k for k in kiosks.values() if k.isOpened]
     message = f"{now.strftime('%Y-%m-%d %H:%M:%S')} - {total_kiosks} kiosk locations, {len(open_kiosks)} currently open"
