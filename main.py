@@ -15,6 +15,7 @@ import requests
 
 tz = pytz.timezone("Europe/Berlin")
 now = tz.localize(datetime.now())
+yyyymmddHHMM = int(now.strftime("%Y%m%d%H%M"))
 
 # Configuration
 ACCESS_TOKEN = os.environ.get("KARLS_API_TOKEN")
@@ -212,6 +213,7 @@ def update_kiosks_in_db(kiosks: Dict[int, Kiosk]) -> None:
     db = dataset.connect("sqlite:///karls.db")
     table = db["items"]
     history_table = db["items_history"]
+    history_table_v2 = db["items_history_v2"]
 
     # set all kiosks to closed before updating
     table.update({ "isOpened": False, "lastUpdate": now.isoformat()}, [])
@@ -242,6 +244,28 @@ def update_kiosks_in_db(kiosks: Dict[int, Kiosk]) -> None:
                 "seen_at": int(now.timestamp()),
             }
         )
+
+    for item in table.all():
+        del item["id"]
+        del item["lastUpdate"]
+        kiosk = Kiosk(**item)
+
+        kiosk_d = history_table_v2.find_one(kioskId=kiosk.kioskId, v2=999999999999)
+        if kiosk.isOpened:
+            # If kiosk is open and no open record exists, insert a new open period
+            if not kiosk_d:
+                history_table_v2.upsert(
+                    {"kioskId": kiosk.kioskId, "v1": yyyymmddHHMM, "v2": 999999999999},
+                    ["kioskId", "v1"],
+                )
+        else:
+            # If kiosk is closed and an open record exists, close the period
+            if kiosk_d:
+                history_table_v2.update(
+                    {"kioskId": kiosk.kioskId, "v1": kiosk_d["v1"], "v2": yyyymmddHHMM},
+                    ["kioskId", "v1"],
+                )
+
 
 def load_kiosks_from_db() -> Dict[int, Kiosk]:
     db = dataset.connect("sqlite:///karls.db")
