@@ -125,7 +125,8 @@
 
     function pointToLayer(feature, latlng) {
         const icon = feature.properties?.isOpened ? strawberryIcon : strawberryIconBW;
-        return L.marker(latlng, {icon});
+        const zIndexOffset = feature.properties?.isOpened ? 1000 : 1; // Higher value for open kiosks
+        return L.marker(latlng, {icon, zIndexOffset});
     }
 
     function onEachFeature(feature, layer) {
