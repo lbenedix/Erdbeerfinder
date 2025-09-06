@@ -159,9 +159,17 @@
                 return response.json();
             })
             .then(data => {
-                geoJsonLayer = L.geoJson(data, {onEachFeature, pointToLayer}).addTo(map);
+                const twoWeeksAgo = Date.now() - (14 * 24 * 60 * 60 * 1000);
+                geoJsonLayer = L.geoJson(data, {
+                    filter: function(feature) {
+                        const lastSeen = new Date(feature.properties.lastSeen).getTime();
+                        return lastSeen >= twoWeeksAgo;
+                    },
+                    onEachFeature,
+                    pointToLayer
+                }).addTo(map);
                 if (!mapInitialized) {
-                map.fitBounds(geoJsonLayer.getBounds());
+                    map.fitBounds(geoJsonLayer.getBounds());
                     mapInitialized = true;
                 }
             })
