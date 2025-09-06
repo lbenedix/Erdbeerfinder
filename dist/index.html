@@ -159,11 +159,11 @@
                 return response.json();
             })
             .then(data => {
-                const twoWeeksAgo = Date.now() - (14 * 24 * 60 * 60 * 1000);
+                const oneWeekAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
                 geoJsonLayer = L.geoJson(data, {
                     filter: function(feature) {
                         const lastSeen = new Date(feature.properties.lastSeen).getTime();
-                        return lastSeen >= twoWeeksAgo;
+                        return lastSeen >= oneWeekAgo;
                     },
                     onEachFeature,
                     pointToLayer
