@@ -135,13 +135,19 @@
             const lastSeenDate = new Date(feature.properties.lastSeen);
             const formattedLastSeen = Number.isNaN(lastSeenDate.getTime())
                 ? '??'
-                : lastSeenDate.toLocaleString('de-DE', {
-                    dateStyle: 'short',
-                    timeStyle: 'short',
-                    timeZone: 'Europe/Berlin'
-                });
+                : `${new Intl.DateTimeFormat('de-DE', {
+                    timeZone: 'Europe/Berlin',
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: '2-digit'
+                }).format(lastSeenDate)} - ${new Intl.DateTimeFormat('de-DE', {
+                    timeZone: 'Europe/Berlin',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false
+                }).format(lastSeenDate)}`;
             let popupContent = `<b>${name}</b><br>`;
-            popupContent += `<br>Last Seen (Berlin Time): ${formattedLastSeen}`;
+            popupContent += `<br>Last Seen: ${formattedLastSeen}`;
             popupContent += `<br>locationGroup: ${feature.properties.locationGroup || '🤷'}`;
             popupContent += `<br><a href="https://www.google.com/maps/dir/?api=1&destination=${feature.geometry.coordinates[1]},${feature.geometry.coordinates[0]}&travelmode=walking" target="_blank" rel="noopener">Navigate</a>`;
 
