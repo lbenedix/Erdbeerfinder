@@ -107,6 +107,7 @@
     map.addControl(new RefreshControl());
 
     let geoJsonLayer;
+    let kioskHistoryById = new Map();
 
     // Define icons
     const strawberryIcon = L.icon({
@@ -129,9 +130,45 @@
         return L.marker(latlng, {icon, zIndexOffset});
     }
 
+    function pad2(value) {
+        return String(value).padStart(2, '0');
+    }
+
+    function formatDate(date) {
+        return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+    }
+
+    function formatTime(date) {
+        return `${pad2(date.getHours())}:${pad2(date.getMinutes())}`;
+    }
+
+    function formatOpenPeriod(period) {
+        const start = new Date(period.start);
+        const datePrefix = `${formatDate(start)}: ${formatTime(start)}`;
+
+        if (!period.end) {
+            return `${datePrefix} - open now`;
+        }
+
+        const end = new Date(period.end);
+        const sameDay =
+            start.getFullYear() === end.getFullYear() &&
+            start.getMonth() === end.getMonth() &&
+            start.getDate() === end.getDate();
+
+        return sameDay
+            ? `${datePrefix} - ${formatTime(end)}`
+            : `${datePrefix} - ${formatDate(end)} ${formatTime(end)}`;
+    }
+
     function onEachFeature(feature, layer) {
         if (feature.properties) {
             const name = feature.properties.name || 'Unknown Name';
+            const history = kioskHistoryById.get(feature.properties.id);
+            const openNow = history?.openNow ?? feature.properties?.isOpened;
+            const recentPeriods = history?.openPeriods || [];
+            const visiblePeriods = recentPeriods.slice(0, 5);
+
             let popupContent = `<b>${name}</b><br>`;
             popupContent += `<br>Last Seen: ${
                 new Date(feature.properties.lastSeen)
@@ -141,6 +178,15 @@
                 // }) || '??'
             }`;
             popupContent += `<br>locationGroup: ${feature.properties.locationGroup || '🤷'}`;
+            popupContent += `<br>Status: ${openNow ? 'Open now' : 'Closed now'}`;
+
+            if (visiblePeriods.length > 0) {
+                const periodLines = visiblePeriods.map(formatOpenPeriod);
+                popupContent += `<br>Open periods (14d):<br>${periodLines.join('<br>')}`;
+            } else {
+                popupContent += `<br>Open periods (14d): none`;
+            }
+
             popupContent += `<br><a href="https://www.google.com/maps/dir/?api=1&destination=${feature.geometry.coordinates[1]},${feature.geometry.coordinates[0]}&travelmode=walking" target="_blank" rel="noopener">Navigate</a>`;
 
             layer.bindPopup(popupContent);
@@ -153,12 +199,19 @@
         if (geoJsonLayer) {
             map.removeLayer(geoJsonLayer);
         }
-        fetch("/karls.geo.json")
-            .then(response => {
-                if (!response.ok) throw new Error("Network response was not ok");
-                return response.json();
+        Promise.all([
+            fetch('/karls.geo.json'),
+            fetch('/karls_history.geo.json'),
+        ])
+            .then(([geoJsonResponse, historyResponse]) => {
+                if (!geoJsonResponse.ok) throw new Error('Could not load karls.geo.json');
+                if (!historyResponse.ok) throw new Error('Could not load karls_history.geo.json');
+                return Promise.all([geoJsonResponse.json(), historyResponse.json()]);
             })
-            .then(data => {
+            .then(([data, historyData]) => {
+                kioskHistoryById = new Map(
+                    (historyData.features || []).map((feature) => [feature.properties?.id, feature.properties])
+                );
                 const oneWeekAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
                 geoJsonLayer = L.geoJson(data, {
                     filter: function(feature) {

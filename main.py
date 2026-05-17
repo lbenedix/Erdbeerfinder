@@ -5,7 +5,7 @@ import json
 import os
 import sys
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from threading import Lock
 from typing import Dict, Generator, List, Optional, Set, Tuple
 
@@ -24,7 +24,11 @@ if not ACCESS_TOKEN:
 API_URL = "https://pep.karls.de/vk/api/erdbeerfinder/v1/get-nearest-kiosks"
 GEO_JSON_FILE = "dist/karls.geo.json"
 GEO_JSON_FILE_ONLY_OPEN = "dist/karls_open.geo.json"
+GEO_JSON_FILE_HISTORY = "dist/karls_history.geo.json"
 NUM_WORKERS = 25  # Number of parallel workers
+HISTORY_WINDOW_DAYS = 14
+OPEN_ENDED_V2 = 999999999999
+MAX_OPEN_INTERVAL = timedelta(days=1)
 
 # Germany bounding box
 GERMANY_BOUNDS = {
@@ -133,6 +137,97 @@ def create_geojson(kiosks_dict: Dict[int, Kiosk], only_open: bool = False) -> di
                 "address": f"{kiosk.street}, {kiosk.zipCode} {kiosk.city}",
                 "isOpened": kiosk.isOpened,
                 "lastSeen": kiosk.lastSeen,
+            },
+        }
+        geojson["features"].append(feature)
+
+    return geojson
+
+
+def compact_timestamp_to_datetime(value: int) -> Optional[datetime]:
+    try:
+        timestamp = datetime.strptime(str(int(value)), "%Y%m%d%H%M")
+    except (TypeError, ValueError):
+        return None
+    return tz.localize(timestamp)
+
+
+def load_recent_open_periods_from_db(
+        kiosk_ids: Set[int],
+        now_dt: datetime,
+        window_days: int = HISTORY_WINDOW_DAYS,
+) -> Dict[int, List[dict]]:
+    db = dataset.connect("sqlite:///karls.db")
+    history_table_v2 = db["items_history_v2"]
+
+    window_start = now_dt - timedelta(days=window_days)
+    periods_by_kiosk: Dict[int, List[dict]] = {kiosk_id: [] for kiosk_id in kiosk_ids}
+
+    for row in history_table_v2.all():
+        kiosk_id = row.get("kioskId")
+        if kiosk_id not in kiosk_ids:
+            continue
+
+        start_dt = compact_timestamp_to_datetime(row.get("v1"))
+        if start_dt is None:
+            continue
+
+        is_open_ended = row.get("v2") == OPEN_ENDED_V2
+        end_dt = now_dt if is_open_ended else compact_timestamp_to_datetime(row.get("v2"))
+        if end_dt is None or end_dt < start_dt:
+            continue
+
+        # Kiosks should not be open for longer than one day.
+        if (end_dt - start_dt) > MAX_OPEN_INTERVAL:
+            continue
+
+        if end_dt <= window_start or start_dt >= now_dt:
+            continue
+
+        clipped_start = max(start_dt, window_start)
+        clipped_end = min(end_dt, now_dt)
+        if clipped_end <= clipped_start:
+            continue
+
+        periods_by_kiosk[kiosk_id].append(
+            {
+                "start": clipped_start.isoformat(),
+                "end": None if is_open_ended else clipped_end.isoformat(),
+                "durationMinutes": int((clipped_end - clipped_start).total_seconds() // 60),
+            }
+        )
+
+    for kiosk_id in periods_by_kiosk:
+        periods_by_kiosk[kiosk_id].sort(key=lambda p: p["start"], reverse=True)
+
+    return periods_by_kiosk
+
+
+def create_history_geojson(
+        kiosks_dict: Dict[int, Kiosk],
+        periods_by_kiosk: Dict[int, List[dict]],
+        window_days: int = HISTORY_WINDOW_DAYS,
+) -> dict:
+    geojson = {"type": "FeatureCollection", "features": []}
+
+    for kiosk_id, kiosk in kiosks_dict.items():
+        periods = periods_by_kiosk.get(kiosk_id, [])
+        open_now = kiosk.isOpened or any(period["end"] is None for period in periods)
+        feature = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [kiosk.geoLng, kiosk.geoLat],
+            },
+            "properties": {
+                "id": kiosk.kioskId,
+                "name": kiosk.kioskName,
+                "number": kiosk.kioskNumber,
+                "locationGroup": kiosk.locationGroup,
+                "address": f"{kiosk.street}, {kiosk.zipCode} {kiosk.city}",
+                "openNow": open_now,
+                "historyWindowDays": window_days,
+                "openPeriods": periods,
             },
         }
         geojson["features"].append(feature)
@@ -250,13 +345,19 @@ def update_kiosks_in_db(kiosks: Dict[int, Kiosk]) -> None:
         del item["lastUpdate"]
         kiosk = Kiosk(**item)
 
-        kiosk_d = history_table_v2.find_one(kioskId=kiosk.kioskId, v2=999999999999)
+        kiosk_d = history_table_v2.find_one(kioskId=kiosk.kioskId, v2=OPEN_ENDED_V2)
         if kiosk.isOpened:
             # If kiosk is open and no open record exists, insert a new open period
             if not kiosk_d:
-                history_table_v2.upsert(
-                    {"kioskId": kiosk.kioskId, "v1": yyyymmddHHMM, "v2": 999999999999},
-                    ["kioskId", "v1"],
+                # First, close any stale open-ended records for this kiosk to prevent overlaps
+                # This handles race conditions where a previous run may have left an open record
+                for stale in history_table_v2.find(kioskId=kiosk.kioskId, v2=OPEN_ENDED_V2):
+                    history_table_v2.update(
+                        {"kioskId": kiosk.kioskId, "v1": stale["v1"], "v2": yyyymmddHHMM},
+                        ["kioskId", "v1"],
+                    )
+                history_table_v2.insert(
+                    {"kioskId": kiosk.kioskId, "v1": yyyymmddHHMM, "v2": OPEN_ENDED_V2},
                 )
         else:
             # If kiosk is closed and an open record exists, close the period
@@ -292,12 +393,21 @@ def load_kiosks_from_db() -> Dict[int, Kiosk]:
 
 def export_geojson_from_db():
     kiosks = load_kiosks_from_db()
+    periods_by_kiosk = load_recent_open_periods_from_db(set(kiosks.keys()), now)
 
     with open(GEO_JSON_FILE, "w", encoding="utf-8") as f1:
         json.dump(create_geojson(kiosks), f1, ensure_ascii=False, sort_keys=True)
 
     with open(GEO_JSON_FILE_ONLY_OPEN, "w", encoding="utf-8") as f1:
         json.dump(create_geojson(kiosks, only_open=True), f1, ensure_ascii=False, sort_keys=True)
+
+    with open(GEO_JSON_FILE_HISTORY, "w", encoding="utf-8") as f_history:
+        json.dump(
+            create_history_geojson(kiosks, periods_by_kiosk, HISTORY_WINDOW_DAYS),
+            f_history,
+            ensure_ascii=False,
+            sort_keys=True,
+        )
 
     total_kiosks = len(kiosks)
     open_kiosks = [k for k in kiosks.values() if k.isOpened]
