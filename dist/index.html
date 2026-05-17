@@ -132,14 +132,16 @@
     function onEachFeature(feature, layer) {
         if (feature.properties) {
             const name = feature.properties.name || 'Unknown Name';
+            const lastSeenDate = new Date(feature.properties.lastSeen);
+            const formattedLastSeen = Number.isNaN(lastSeenDate.getTime())
+                ? '??'
+                : lastSeenDate.toLocaleString('de-DE', {
+                    dateStyle: 'short',
+                    timeStyle: 'short',
+                    timeZone: 'Europe/Berlin'
+                });
             let popupContent = `<b>${name}</b><br>`;
-            popupContent += `<br>Last Seen: ${
-                new Date(feature.properties.lastSeen)
-                //     .toLocaleString('de-DE', {
-                //     dateStyle: 'medium',
-                //     timeStyle: 'short',
-                // }) || '??'
-            }`;
+            popupContent += `<br>Last Seen (Berlin Time): ${formattedLastSeen}`;
             popupContent += `<br>locationGroup: ${feature.properties.locationGroup || '🤷'}`;
             popupContent += `<br><a href="https://www.google.com/maps/dir/?api=1&destination=${feature.geometry.coordinates[1]},${feature.geometry.coordinates[0]}&travelmode=walking" target="_blank" rel="noopener">Navigate</a>`;
 
