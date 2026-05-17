@@ -132,7 +132,21 @@
     function onEachFeature(feature, layer) {
         if (feature.properties) {
             const name = feature.properties.name || 'Unknown Name';
-            const lastSeenDate = new Date(feature.properties.lastSeen);
+            const rawLastSeen = feature.properties.lastSeen;
+            // Backend stores a wall-clock time; parse as UTC so Berlin formatting shows the intended local time.
+            const isoMatch = typeof rawLastSeen === 'string'
+                ? rawLastSeen.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?/)
+                : null;
+            const lastSeenDate = isoMatch
+                ? new Date(Date.UTC(
+                    Number(isoMatch[1]),
+                    Number(isoMatch[2]) - 1,
+                    Number(isoMatch[3]),
+                    Number(isoMatch[4]),
+                    Number(isoMatch[5]),
+                    Number(isoMatch[6] || 0)
+                ))
+                : new Date(rawLastSeen);
             const formattedLastSeen = Number.isNaN(lastSeenDate.getTime())
                 ? '??'
                 : `${new Intl.DateTimeFormat('de-DE', {
